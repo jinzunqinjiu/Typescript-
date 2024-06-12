@@ -1,4 +1,4 @@
-//noolean类型
+//boolean类型
 const x: boolean = true;
 const y: boolean = false;
 //布尔类型只有true和false两种类型。
@@ -109,7 +109,7 @@ object = (a: number) => a + 1;
 object = undefined; // 报错
 object = null; // 报错
 
-//空对{}是Object类型的简写形式，所以常用{}代替
+//空对象{}是Object类型的简写形式，所以常用{}代替
 let object1: Object;
 object1 = true;
 object1 = "hi";
@@ -159,14 +159,14 @@ money = undefined; // 正确
 
 
 //值类型
-//ypeScript 规定，单个值也是一种类型，称为“值类型”。
+//typeScript 规定，单个值也是一种类型，称为“值类型”。
 let l: "hello";
 
 l = "hello"; // 正确
 l = "world"; // 报错
 //也就是说值也是一种类型，并且值也只能是这个值
 //TypeScript 推断类型时，遇到const命令声明的变量，如果代码里面没有注明类型，就会推断该变量是值类型。
-//其实也可以这么认为，毕竟const声明的变量不能修改，与js高度一致，所以我认为值类型是为const创立的
+//其实也可以这么认为，毕竟const声明的变量不能修改,而且必须赋值，与js高度一致，所以我认为值类型是为const创立的
 
 //注意，const命令声明的变量，如果赋值为对象，并不会推断为值类型。
 // x 的类型是 { foo: number }
@@ -288,11 +288,10 @@ type MyAge = typeof Age1; // 报错
 //类型的兼容
 //TypeScript 的类型存在兼容关系，某些类型可以兼容其他类型。
 type S = number | string;
-
 let a6: number = 1;
 let b6: S = a6;
 
-//ypeScript 为这种情况定义了一个专门术语。如果类型A的值可以赋值给类型B，那么类型A就称为类型B的子类型（subtype）。在上例中，类型number就是类型number|string的子类型。
+//typeScript 为这种情况定义了一个专门术语。如果类型A的值可以赋值给类型B，那么类型A就称为类型B的子类型（subtype）。在上例中，类型number就是类型number|string的子类型。
 
 //TypeScript 的一个规则是，凡是可以使用父类型的地方，都可以使用子类型，但是反过来不行。
 let a7: "hi" = "hi";
